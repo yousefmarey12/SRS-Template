@@ -1,10 +1,10 @@
 # Software Requirements Specification
-## For {{project name}}
+## For Bidding System
 
 Version 0.1  
-Prepared by {{author}}  
-{{organization}}  
-{{date_modified}}
+Prepared by Yousef Marey  
+Albaloot  
+20th May, 2026
 
 ## Table of Contents
 <!-- TOC -->
@@ -43,6 +43,7 @@ Prepared by {{author}}
 💬 _Provides an overview of the document and orients the reader to the system being specified._
 
 ➥ Briefly summarize the SRS’s purpose, product scope, intended audience, and how the document is organized. Do not include details here; reference the relevant sections instead.
+The Software Requirements Specification (SRS) document is to specify what requirements are to be implemented given a date. This project is for Mr. Albaloot and  Yousef Marey
 
 ### 1.1 Document Purpose
 💬 _Clarifies why this SRS exists, what it contains, and who should use it._
@@ -53,6 +54,8 @@ Prepared by {{author}}
 - Emphasize that the SRS defines what the system must do, not how it will do it.
 - Mention related documents (vision/scope, architecture, roadmap, contracts) if relevant.
 
+SRS will define a set of requirements that will be in scope. These requirements will be agreed upon both Yousef Marey and AlBaloot
+
 ### 1.2 Product Scope
 💬 _Defines the software product’s purpose, boundaries, and relationship to business goals._
 
@@ -61,6 +64,8 @@ Prepared by {{author}}
 💡 Tips:
 - Connect capabilities to business objectives and reference a separate vision/scope document if relevant.
 - Include a simple diagram if it clarifies boundaries within a larger system.
+
+This product aims to allow auctioneers and bidders to allow auctions to happen. Auctioneers will be able to customize their auctions and bidders will have multiple options for bidding.
 
 ### 1.3 Definitions, Acronyms, and Abbreviations
 ➥ Help readers understand specialized terms and notation by providing a glossary of domain terms, acronyms, and abbreviations used in the SRS.
@@ -103,6 +108,8 @@ Prepared by {{author}}
 - Highlight upstream/downstream systems and ownership boundaries.
 - A high-level context diagram may help to orient the reader.
 
+This product is a mobile application owned by Mr. Albaloot.
+
 ### 2.2 Product Functions
 💬 _High-level summary of what the product enables users or systems to do._
 
@@ -112,6 +119,11 @@ Prepared by {{author}}
 - 5–10 bullets are often sufficient at this level, grouping related functions logically.
 - Include a top-level data flow or use case diagram if helpful.
 
+- Auctioneers have an interface for placing auctions
+- Bidders have multiple options of placing bids
+- Delievery of services are managed by a 3rd party
+- Authentication & Authorization are a must
+- Public comment section allowed for each auction
 ### 2.3 Product Constraints
 💬 _Defines contextual limitations or conditions shaping design and implementation._
 
@@ -132,7 +144,15 @@ Requirements (Section 3) defines verifiable system obligations—specific behavi
 
 💡 Tips:
 - Define user classes by behavior, not just titles.
-- Note localization and accessibility considerations that affect UI/UX requirements.
+- Note localization and accessibility considerations that affect UI/UX requirements.\
+
+ Customer:
+   - Auctioneer
+      - This person makes auctions that and can manage their auctions as they want to maximize their profit. They have their own configurations and options to do so.
+   - Bidder:
+      - They have multiple options for placing bids on an auction. 
+ Admin:
+   - Can adminster all auctioneers and bidders and auctions.
 
 ### 2.5 Assumptions and Dependencies
 💬 _External assumed factors or conditions, as opposed to known facts, that the project relies on._
@@ -158,14 +178,363 @@ Requirements (Section 3) defines verifiable system obligations—specific behavi
 📃 Template (applies to **all** requirements):
 ```markdown
 - ID: REQ-FUNC-001
-- Title: Short title, representative of the requirement...
-- Statement: The system shall...
-- Rationale: ...
-- Acceptance Criteria: ...
+- Title: Authentication & Authorization
+- Statement: As a User, I can login and signup for an account such that no one views my personal app state
+- Acceptance Criteria: Security at Frontend / Backend / DB level 
 - Verification Method: Test | Analysis | Inspection | Demonstration | Other
 - More Information: Additional context. Links to related artifacts.
 ```
 
+```markdown
+- ID: REQ-FUNC-002
+- Title: Onboard Customize interests
+- Statement: As a User, I shall customize my interests such that appropiate auctions are displayed
+- Acceptance Criteria: Auctions in relevant tags are displayed first
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-003
+- Title: Filter Auctions
+- Statement: As a User, I can filter auctions based on price/distance from auctioner, category, highest price, type of auctions, etc in order to fullfil my needs
+- Acceptance Criteria: Filter only displays requested items
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-004
+- Title: Sort Auctions
+- Statement: As a User, I can sort auctions based on price/distance from auctioner, category, highest price, type of auctions, etc in order to fullfil my needs
+- Acceptance Criteria: Sort displays in sorted order
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-005
+- Title: Point Management - 1
+- Statement: As a User, I can enter an auction by paying from some of my points 
+- Acceptance Criteria: Points are decremented from the user if bid happens
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-006
+- Title: Point Management - 2
+- Statement: As an admin, I can set the price of a point, and multiple points (10 points, 100 points, etc)
+- Acceptance Criteria: Payments reflect the choices made from admin
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-007
+- Title: Point Management - 3
+- Statement: As a user, I can request to transfer points to different users by phone number
+- Acceptance Criteria: Transfer Push Notification should occur
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-008
+- Title: Point Management - 4
+- Statement: As a user, from REQ-FUNC-007, I can accept or reject the transfer
+- Acceptance Criteria: Points are decremented from the user and incremented in transferred if transfer happens
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-009
+- Title: Point Management - 5
+- Statement: As a user, I shall receive N amount of points per 30 days based on subscription
+- Acceptance Criteria: Points are incremented by N based on subscription
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-010
+- Title: Subscription Model - 1
+- Statement: As the system, there shall be 3 different subscriptions (free and 2 others) which target different user groups
+- Acceptance Criteria: All 4 subscription plans accept the appropiate payments and offer their service
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-011
+- Title: Subscription Model - 2
+- Statement: As the system, there shall be a subscription for receiving more points per month automatically than the free one
+- Acceptance Criteria: Points incremented by appropiate amount in user balance
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-012
+- Title: Subscription Model -3
+- Statement: As the system, there shall be a subscription for lower/no fees for making auctions
+- Acceptance Criteria: Auctions can be placed without a fee
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+```markdown
+- ID: REQ-FUNC-013
+- Title: Subscription Model -4
+- Statement: As the system, I shall allow a user to subscribe to REQ-FUNC-011 and REQ-FUNC-012
+- Acceptance Criteria: Acceptance Critertia for REQ-FUNC-011 and REQ-FUNC-012 at the same time
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-014
+- Title: Bidding Model
+- Statement: As the system, the bidder can only bid if they have more than the required amount of points (constant for every auction)
+- Acceptance Criteria: User has less points and should open an error
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-015
+- Title: Point Return
+- Statement: As the system, all points should be returned to the users if the auction is cancelled
+- Acceptance Criteria: Cancel an auction and points returned to their respecitve users
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-016
+- Title: Auction Management - 1
+- Statement: As the auctioneer, I can cancel an auction for any reason but no refund
+- Acceptance Criteria: Auction can be canelled as the appropiate auctioneer
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-017
+- Title: Auction Management - 2
+- Statement: As the auctioneer, for REQ-FUNC-016, I can only cancel my auctions that have not been automatically closed
+- Acceptance Criteria: Cancelling a closed auction should throw an error
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+```markdown
+- ID: REQ-FUNC-018
+- Title: Auction Management - 3
+- Statement: As the user, I shall have the ability to be notified on particular auctions I pick for particular events
+- Acceptance Criteria: Notified on selected options and no notification on unselected options
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+```markdown
+- ID: REQ-FUNC-019
+- Title: Auction Management - 4
+- Statement: As the auctioneer, I can pick between 2 types of auctions: Short-time and Long-time
+- Acceptance Criteria: Type of Auction stored in DB / Backend / Frontend
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-020
+- Title: Auction Management - 5
+- Statement: As the system, REQ-FUNC-019 means a short-time auction that happens at time T (user picks) with a duration of N minutes (we decide)
+- Acceptance Criteria: Between time T and time T + N should be an active auction
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-021
+- Title: Auction Management - 6
+- Statement: As a bidder, I can join a short-time auction if it is pending or active. Pending means before time T, active means before time T + N (see REQ-FUNC-020)
+- Acceptance Criteria: Error is thrown while trying to join an auction after T + N
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-022
+- Title: Auction Management - 7
+- Statement:  As the system, REQ-FUNC-019 means a long-time auction where the auction is active between publish time and publish time + N (defined by user where it can be in days)
+- Acceptance Criteria: Error is thrown while trying to join an auction after T + N
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-023
+- Title: Auction Management - 8
+- Statement:  As the system, a long-time auction can have a public comment base to ask questions
+- Acceptance Criteria: Error is thrown while trying to join an auction after T + N
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+
+```markdown
+- ID: REQ-FUNC-024
+- Title: Comment Base Management
+- Statement:  As the system, the author of the auction should have an indicatior in the comment base that he is the maker of the auction
+- Acceptance Criteria: Only maker of respective auction has indicator
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-025
+- Title: Public Profile Management - 1
+- Statement:  As a user, I shall have a public profile that displays no contact information about me.
+- Acceptance Criteria: No contact information displayed in public profile
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-026
+- Title: Public Profile Management - 2
+- Statement:  As a user, I shall have a public profile that shows bidding and auction history and interests
+- Acceptance Criteria: Appropiate info is displayed
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-027
+- Title: Public Profile Management - 3
+- Statement:  As a user, I shall have the ability to share a link to my profile
+- Acceptance Criteria: Link to be shared to others
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-028
+- Title: Auction Management - 9
+- Statement:  As the system, I shall be able to detect inappropiate or illegal items for auctions before they are published
+- Acceptance Criteria: Guns and other illegal items should not be posted
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-029
+- Title: Auction Management - 10
+- Statement:  As the system, I shall integrate with 3rd party delievery services in Kuwait to manage delievery of auctioneer and winning bidder
+- Acceptance Criteria: Notifications should be sent to 3rd party delievery services to pickup
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-030
+- Title: Admin Dashboard - 1
+- Statement:  As the admin, I should be able to view all details except sensitive credentials of users and view all details of auctions.
+- Acceptance Criteria: Using JWT, admin can only fetch all user data
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-031
+- Title: Admin Dashboard -2 
+- Statement:  As the admin, there should be a notes section that the admin can add to the auction
+- Acceptance Criteria: Notes can be automatically added or only added by admin
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-032
+- Title: Admin Dashboard - 3
+- Statement:  As the admin, the admin can filter and sort auctions 
+- Acceptance Criteria: Filtering and Sorting can be done on frontend/backend/DB
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-033
+- Title: Admin Dashboard - 4
+- Statement:  As the admin, each auction should have a link to respective bidders and auctioneer
+- Acceptance Criteria: Clicking leads to profile
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-034
+- Title: User Deletion
+- Statement:  As a user, I can delete my profile if I choose not to continue with the application
+- Acceptance Criteria: User deleted on all DBs
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-035
+- Title: User modification
+- Statement:  As a user, I can change my personal details
+- Acceptance Criteria: Changes reflected on DB
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-036
+- Title: Application Management
+- Statement:  As the system, all pages will be in Arabic and English
+- Acceptance Criteria: I18N easy
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-037
+- Title: Comment Base Management - 2
+- Statement:  As the system, I should block inappropiate or spam comments in the comment base
+- Acceptance Criteria: Inappropiate or spam Comments are marked and not published
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-038
+- Title: Admin Dashboard - 5
+- Statement:  As the admin, I have the ability to block someone from bidding and auctioning for inappropiate or scam actions
+- Acceptance Criteria: Phone number with respecitve user should be flagged
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-039
+- Title: Auction Management - 11
+- Statement:  As an auctionneer, I have the ability to change auction details (duration, etc) but not product details. 
+- Acceptance Criteria: Set of fields to be changed are related to auction only
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-040
+- Title: Auction Management - 12
+- Statement: As the system, I will send notifications to the user if REQ-FUNC-039 happens.
+- Acceptance Criteria: Set of fields to be changed are related to auction only
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```
 Requirement ID schema and traceability:
 - ID format: REQ-[AREA]-[NNN]-[VER] (optional -[VER] if versioned), where AREA ∈ {FUNC, INT, PERF, SEC, REL, AVAIL, OBS, COMP, INST, BUILD, DIST, MAINT, REUSE, PORT, COST, DEAD, POC, CM, ML}.
 - Uniqueness: IDs must be unique and immutable; changes increment -[VER] and are recorded in Revision History.
