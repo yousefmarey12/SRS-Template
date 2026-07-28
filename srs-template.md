@@ -1,10 +1,10 @@
 # Software Requirements Specification
-## For {{project name}}
+## For Shoe Store
 
 Version 0.1  
-Prepared by {{author}}  
-{{organization}}  
-{{date_modified}}
+Prepared by Yousef Marey
+yousefmarey.com
+28/07/2026
 
 ## Table of Contents
 <!-- TOC -->
@@ -52,6 +52,8 @@ Prepared by {{author}}
 💡 Tips:
 - Emphasize that the SRS defines what the system must do, not how it will do it.
 - Mention related documents (vision/scope, architecture, roadmap, contracts) if relevant.
+
+This document is for a mutual agreement between Mr. Ammar Alanezi and Yousef Marey on what the project entails alongside the scope.
 
 ### 1.2 Product Scope
 💬 _Defines the software product’s purpose, boundaries, and relationship to business goals._
@@ -103,6 +105,8 @@ Prepared by {{author}}
 - Highlight upstream/downstream systems and ownership boundaries.
 - A high-level context diagram may help to orient the reader.
 
+This product is owned by Mr. Ammar Alanezi.
+
 ### 2.2 Product Functions
 💬 _High-level summary of what the product enables users or systems to do._
 
@@ -111,6 +115,16 @@ Prepared by {{author}}
 💡 Tips:
 - 5–10 bullets are often sufficient at this level, grouping related functions logically.
 - Include a top-level data flow or use case diagram if helpful.
+
+- Admin Interface:
+     - Shipping from Storage to Supplier
+     - Product Management
+     - Stock Management
+     - Return/Refund/Complaint Management
+- Client Interface:
+     - Multiple Payment Options
+     - Registration / Login
+     - Personalized Product Plan
 
 ### 2.3 Product Constraints
 💬 _Defines contextual limitations or conditions shaping design and implementation._
@@ -134,6 +148,9 @@ Requirements (Section 3) defines verifiable system obligations—specific behavi
 - Define user classes by behavior, not just titles.
 - Note localization and accessibility considerations that affect UI/UX requirements.
 
+User Classes:
+   1. Purchaser - Any client within the GCC
+   2. Admin - Ammar Alanezi
 ### 2.5 Assumptions and Dependencies
 💬 _External assumed factors or conditions, as opposed to known facts, that the project relies on._
 
@@ -156,16 +173,76 @@ Requirements (Section 3) defines verifiable system obligations—specific behavi
 ➥ State requirements to a level of detail sufficient for design and verification. Use unique identifiers, consistent keywords (shall/should/may), and clear conditions. Describe inputs, processing in response, and outputs where applicable. Reference the relevant 2.3 Product Constraints that the requirement addresses.
 
 📃 Template (applies to **all** requirements):
+
 ```markdown
 - ID: REQ-FUNC-001
-- Title: Short title, representative of the requirement...
-- Statement: The system shall...
-- Rationale: ...
-- Acceptance Criteria: ...
+- Title: Product Management - Admin can CRUD
+- Statement: Be able to Add, Remove, and Update products 
+- Rationale: Only the admin must have control of the store's product
+- Acceptance Criteria: Anyone other than the admin must not be able to modify product data
 - Verification Method: Test | Analysis | Inspection | Demonstration | Other
 - More Information: Additional context. Links to related artifacts.
 ```
 
+```markdown
+- ID: REQ-FUNC-002
+- Title: Shipment Management - Automatic to Client Shipment
+- Statement: Integration will be made with 3rd party carriers that handle shipments from storage to client's location
+- Rationale: Admin should be concerned with shipping from supplier to storage, not to client's location
+- Acceptance Criteria: As customer pays for a product, a shipment request should be sent to the 3rd party
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-003
+- Title: Shipment Management - Admin notified when stock is low / runs out
+- Statement: An email or SMS is sent to the admin when a particular product is in low supply / no supply.
+- Rationale: This allows admin to plan ahead and order earlier
+- Acceptance Criteria: an SMS or email is received by admin when the quantity goes below a certain thershold
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-004
+- Title: Shipment Management - Admin Control Shipping Fees based on geographic location
+- Statement: The admin can update the shipping fees based on the GCC country or region in Saudi Arabia
+- Rationale: The 3rd party carrier will charge a fee and the shipping fee sent to the client must match
+- Acceptance Criteria: Every geographic destiation should end up with a particular shipping fee
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-005
+- Title: Product Management - Out of Stock Clear
+- Statement: The client cannot order an out of stock product
+- Rationale: We can't ship something we do not have.
+- Acceptance Criteria: Try ordering an out of stock item and it should result in an error
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-006
+- Title: Customer Management - Details of Every Customer
+- Statement: The admin can view details of every customer on a table in their portal
+- Rationale: The admin may need to view the most paying customers, etc.
+- Acceptance Criteria: Not 1 customer is left out from the table
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-007
+- Title: Order Management - Details of Every Order
+- Statement: The admin can view details of every order
+- Rationale: The admin may need to look at past orders and their status
+- Acceptance Criteria: Not 1 order is left out from the table
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
 Requirement ID schema and traceability:
 - ID format: REQ-[AREA]-[NNN]-[VER] (optional -[VER] if versioned), where AREA ∈ {FUNC, INT, PERF, SEC, REL, AVAIL, OBS, COMP, INST, BUILD, DIST, MAINT, REUSE, PORT, COST, DEAD, POC, CM, ML}.
 - Uniqueness: IDs must be unique and immutable; changes increment -[VER] and are recorded in Revision History.
