@@ -240,9 +240,227 @@ User Classes:
 
 ```markdown
 - ID: REQ-FUNC-008
-- Title: Customer - Remove Virtual Cart
-- Statement: As a customer, I should be able to reset a virtual cart if I want to start over
-- Acceptance Criteria: Reseting a virtual cart should delete all items and their respective quantities and customizations
+- Title: Customer - Remove Item from Virtual Cart
+- Statement: As a customer, I should be able to remove an item from the virtual cart in case I do not need it anymore
+- Acceptance Criteria: Removing an item from the virtual cart will result in it and their respective quantities/customizations be deleted
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-009
+- Title: Customer - View Discount / Old Price
+- Statement: As a customer, I should be able to view the product at the discounted price against the old price in order to motivate me to buy
+- Acceptance Criteria: Every discounted item will be clear that it is discounted
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-010
+- Title: Customer - View Discount Expiry Date
+- Statement: As a customer, I should be able to view the expiry date of the discount of the product (offer valid until)
+- Acceptance Criteria: Every discounted item has an expiry date
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-011
+- Title: Customer - View Discount Expiry Date
+- Statement: As a customer, I should be able to view the expiry date of the discount of the product (offer valid until)
+- Acceptance Criteria: Every discounted item has an expiry date
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-012
+- Title: Customer - Shipping Details - Customer Contact & OTP
+- Statement: As a customer, I should be able to enter my phone number and an OTP be sent to that phone number
+- Acceptance Criteria: Every phone number will be sent to the database
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-013
+- Title: Customer - Payment Details 
+- Statement: As a customer, I should be able to pay with Google Pay, Apple Pay, Debit/Credit Card
+- Acceptance Criteria: Payment in all forms should result into Comapny's bank account on Stripe
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-014
+- Title: Customer - Receipt
+- Statement: As a customer, I should be able to receive a receipt on SMS and as soon as customer payment is success
+- Acceptance Criteria: Receipt should be displayed and sent to customer via SMS on success
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-015
+- Title: Customer - Payment Failure
+- Statement: As a customer, I will be redirected to the cart page if the payment did not succeed with an error displayed
+- Acceptance Criteria: In case of insufficent funds (or any reason), an error banner is displayed
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-016
+- Title: Customer - Redirect to Track Order Page 
+- Statement: As a customer, I will be redirected to an order tracking page that will have the status of the order
+- Acceptance Criteria: In case of a successful payment, the order page is redirected.
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-017
+- Title: Customer - Track Order
+- Statement: As a customer, I can track the order given the order ID 
+- Acceptance Criteria: Given the correct Order ID, I will be redirected to REQ-FUNC-16
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-018
+- Title: Admin - Know all Customers + Filter/Sort
+- Statement: As an admin, I can search for customers (people who have at least 1 order) in my portal and get their details
+- Acceptance Criteria: Given an order is made by a new customer phone number, a customer is made and is available for the admin
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-019
+- Title: Admin - Know all Orders + Filter/Sort
+- Statement: As an admin, I can search for orders in my portal and get their status
+- Acceptance Criteria: Given an order is made, an order is made available in the portal
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+
+```markdown
+- ID: REQ-FUNC-020
+- Title: Admin - View Stock
+- Statement: As an admin, I want to view every product and the current stock in inventory
+- Acceptance Criteria: Stock virtually represents the amount of a particular product
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-021
+- Title: Admin - Decrease Stock
+- Statement: As an admin, I want it such that when an order is made, the stock decreases based on quanitty
+- Acceptance Criteria: Given an order is made, stock decreases based on quantity
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-022
+- Title: Admin - Limit how much in Stock
+- Statement: As an admin, I want to limit the customer for a quantity of a particular product based on the stock available
+- Acceptance Criteria: Quantity should not surpass stock left and it is never negative
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-023
+- Title: Admin - Update Stock
+- Statement: As an admin, I can change the stock for a particular product in case a shipment arrives
+- Acceptance Criteria: Automatic Stock Change should be reflected everywhere
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-024
+- Title: Admin - Integrate with 3rd Party Delivery
+- Statement: As an admin, customers with orders will then be eventually redirected to a 3rd party shipping order where they can track it from there
+- Acceptance Criteria: Every order is redirected to a 3rd party parcel company
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-025
+- Title: Admin - Change Shipping Fees based on Geographical Location
+- Statement: As an admin, I can adjust a shipping fee based on the GCC country or the region in Saudi Arabia
+- Acceptance Criteria: Select a shipping address and get the corresponding fee
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-026
+- Title: Admin - Change Shipping Fees based on Geographical Location - 2
+- Statement: As an admin, I can adjust when shipping is free after a particular amount is bought based on the GCC country or region in Saudi Arabia
+- Acceptance Criteria: Select a shipping address with an order with a particular amount and get a free shipping
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-027
+- Title: Admin - Do Not Allow Shipping Address Outside GCC
+- Statement: As an admin, putting an address outside of the GCC region will give me an error.
+- Acceptance Criteria: Select a region outside GCC and get an error
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-028
+- Title: Admin - Create, Update, and Delete Products
+- Statement: As an admin, I can Create a new product, update/delete an existing product
+- Acceptance Criteria: Modification of a product is shown everywhere
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-029
+- Title: Admin - Deletion of Product with Order
+- Statement: As an admin, I want it such that the deletion of a product does not result in deleting the order
+- Acceptance Criteria: Deletion of a product does not actually delete it in the database
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+
+```markdown
+- ID: REQ-FUNC-030
+- Title: Admin - Setting Price reflects currency across GCC
+- Statement: As an admin, I want the prices to be visible in the correct currency based on user's geographic location
+- Acceptance Criteria: Use a VPN to see if the current currency is used
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-031
+- Title: Privacy Policy Page Provided
+- Statement: As an admin, I want it such that a privacy policy page is displayed for the user
+- Acceptance Criteria: Policy Policy exists
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+```markdown
+- ID: REQ-FUNC-032
+- Title: Privacy Policy Page Provided
+- Statement: As an admin, I want it such that a privacy policy page is displayed for the user
+- Acceptance Criteria: Policy Policy exists
 - Verification Method: Test | Analysis | Inspection | Demonstration | Other
 - More Information: Additional context. Links to related artifacts.
 ```
