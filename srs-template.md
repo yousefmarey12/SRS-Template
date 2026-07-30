@@ -458,12 +458,22 @@ User Classes:
 
 ```markdown
 - ID: REQ-FUNC-032
-- Title: Privacy Policy Page Provided
-- Statement: As an admin, I want it such that a privacy policy page is displayed for the user
-- Acceptance Criteria: Policy Policy exists
+- Title: Admin - Update Carousel in Home Page
+- Statement: As an admin, I want the ability to control the slides in my home page
+- Acceptance Criteria: Controlling slides in admin portal results in a change for a customer home page
 - Verification Method: Test | Analysis | Inspection | Demonstration | Other
 - More Information: Additional context. Links to related artifacts.
 ```
+
+```markdown
+- ID: REQ-FUNC-033
+- Title: Customer - Carousel Slide leads to a particular page
+- Statement: As an admin, I want the carousel slide to point to a particular page on the website
+- Acceptance Criteria: Admin will enter a link that will redirect the user
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
 
 
 Requirement ID schema and traceability:
