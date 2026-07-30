@@ -176,73 +176,78 @@ User Classes:
 
 ```markdown
 - ID: REQ-FUNC-001
-- Title: Product Management - Admin can CRUD
-- Statement: Be able to Add, Remove, and Update products 
-- Rationale: Only the admin must have control of the store's product
-- Acceptance Criteria: Anyone other than the admin must not be able to modify product data
+- Title: Customer - Browse Products
+- Statement: As a customer, I should be able to browse all (in-stock and out-stock) products in order to compare
+- Acceptance Criteria: All products are viewed on the website
 - Verification Method: Test | Analysis | Inspection | Demonstration | Other
 - More Information: Additional context. Links to related artifacts.
 ```
 
 ```markdown
 - ID: REQ-FUNC-002
-- Title: Shipment Management - Automatic to Client Shipment
-- Statement: Integration will be made with 3rd party carriers that handle shipments from storage to client's location
-- Rationale: Admin should be concerned with shipping from supplier to storage, not to client's location
-- Acceptance Criteria: As customer pays for a product, a shipment request should be sent to the 3rd party
+- Title: Customer - Filter Products
+- Statement: As a customer, I should be able to filter products by certain fields in order to find what I am looking for
+- Acceptance Criteria: Filters result in only a correct subset of all items
 - Verification Method: Test | Analysis | Inspection | Demonstration | Other
 - More Information: Additional context. Links to related artifacts.
 ```
 
+
 ```markdown
 - ID: REQ-FUNC-003
-- Title: Shipment Management - Admin notified when stock is low / runs out
-- Statement: An email or SMS is sent to the admin when a particular product is in low supply / no supply.
-- Rationale: This allows admin to plan ahead and order earlier
-- Acceptance Criteria: an SMS or email is received by admin when the quantity goes below a certain thershold
+- Title: Customer - Sort Products
+- Statement: As a customer, I should be able to sort products by certain fields in order to find what I am looking for
+- Acceptance Criteria: Sorting can be done in both ascending and descending order
 - Verification Method: Test | Analysis | Inspection | Demonstration | Other
 - More Information: Additional context. Links to related artifacts.
 ```
 
 ```markdown
 - ID: REQ-FUNC-004
-- Title: Shipment Management - Admin Control Shipping Fees based on geographic location
-- Statement: The admin can update the shipping fees based on the GCC country or region in Saudi Arabia
-- Rationale: The 3rd party carrier will charge a fee and the shipping fee sent to the client must match
-- Acceptance Criteria: Every geographic destiation should end up with a particular shipping fee
+- Title: Customer - View Product Details
+- Statement: As a customer, I should be able to view product details in order to get more information about a product
+- Acceptance Criteria: Clicking on a product should result in seeing all product details
 - Verification Method: Test | Analysis | Inspection | Demonstration | Other
 - More Information: Additional context. Links to related artifacts.
 ```
 
 ```markdown
 - ID: REQ-FUNC-005
-- Title: Product Management - Out of Stock Clear
-- Statement: The client cannot order an out of stock product
-- Rationale: We can't ship something we do not have.
-- Acceptance Criteria: Try ordering an out of stock item and it should result in an error
+- Title: Customer - Customizable Product Details
+- Statement: As a customer, I should be able to customize a product to suit my order
+- Acceptance Criteria: Customizations should be included into the cart
 - Verification Method: Test | Analysis | Inspection | Demonstration | Other
 - More Information: Additional context. Links to related artifacts.
 ```
 
 ```markdown
 - ID: REQ-FUNC-006
-- Title: Customer Management - Details of Every Customer
-- Statement: The admin can view details of every customer on a table in their portal
-- Rationale: The admin may need to view the most paying customers, etc.
-- Acceptance Criteria: Not 1 customer is left out from the table
+- Title: Customer - Virtual Cart
+- Statement: As a customer, I should have a virtual cart that contains the products I want to buy with their respective quantities and customizations
+- Acceptance Criteria: A virtual cart should include only and items that the customer wants
 - Verification Method: Test | Analysis | Inspection | Demonstration | Other
 - More Information: Additional context. Links to related artifacts.
 ```
 
 ```markdown
 - ID: REQ-FUNC-007
-- Title: Order Management - Details of Every Order
-- Statement: The admin can view details of every order
-- Rationale: The admin may need to look at past orders and their status
-- Acceptance Criteria: Not 1 order is left out from the table
+- Title: Customer - Reset Virtual Cart
+- Statement: As a customer, I should be able to reset a virtual cart if I want to start over
+- Acceptance Criteria: Reseting a virtual cart should delete all items and their respective quantities and customizations
 - Verification Method: Test | Analysis | Inspection | Demonstration | Other
 - More Information: Additional context. Links to related artifacts.
 ```
+
+```markdown
+- ID: REQ-FUNC-008
+- Title: Customer - Remove Virtual Cart
+- Statement: As a customer, I should be able to reset a virtual cart if I want to start over
+- Acceptance Criteria: Reseting a virtual cart should delete all items and their respective quantities and customizations
+- Verification Method: Test | Analysis | Inspection | Demonstration | Other
+- More Information: Additional context. Links to related artifacts.
+```
+
+
 Requirement ID schema and traceability:
 - ID format: REQ-[AREA]-[NNN]-[VER] (optional -[VER] if versioned), where AREA ∈ {FUNC, INT, PERF, SEC, REL, AVAIL, OBS, COMP, INST, BUILD, DIST, MAINT, REUSE, PORT, COST, DEAD, POC, CM, ML}.
 - Uniqueness: IDs must be unique and immutable; changes increment -[VER] and are recorded in Revision History.
