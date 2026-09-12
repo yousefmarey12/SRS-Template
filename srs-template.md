@@ -44,6 +44,7 @@ Prepared by {{author}}
 
 ➥ Briefly summarize the SRS’s purpose, product scope, intended audience, and how the document is organized. Do not include details here; reference the relevant sections instead.
 
+The Software Requirement Specification is aimed to support the reader to understand the product, a web application for handling real estate, in a way such that all stakeholders are in agreement with each other.
 ### 1.1 Document Purpose
 💬 _Clarifies why this SRS exists, what it contains, and who should use it._
 
@@ -53,6 +54,8 @@ Prepared by {{author}}
 - Emphasize that the SRS defines what the system must do, not how it will do it.
 - Mention related documents (vision/scope, architecture, roadmap, contracts) if relevant.
 
+The SRS is a document for specifying the needs of the product. It is used by all internal stakeholders such that an agreement of the functionality of the product can be maintained.
+
 ### 1.2 Product Scope
 💬 _Defines the software product’s purpose, boundaries, and relationship to business goals._
 
@@ -61,6 +64,8 @@ Prepared by {{author}}
 💡 Tips:
 - Connect capabilities to business objectives and reference a separate vision/scope document if relevant.
 - Include a simple diagram if it clarifies boundaries within a larger system.
+
+The web application is devoted to selling the founder of Najd Cafe's real estate. It handles various features such as connecting to Airbnb, advising prospective buyers of life in Cairo, and allowing authorized admins to adjust features of the website. It does not handle other services such as offering tour packages and AI chatbot usage (at least for the current version)
 
 ### 1.3 Definitions, Acronyms, and Abbreviations
 ➥ Help readers understand specialized terms and notation by providing a glossary of domain terms, acronyms, and abbreviations used in the SRS.
@@ -94,6 +99,8 @@ Prepared by {{author}}
 ## 2. Product Overview
 💬 _Provides background and context influencing the product’s requirements._
 
+Given that the founder of Najd Cafe has various real estate properties, this product is devoted to renting the properties to short-term temporary tennants.
+
 ### 2.1 Product Perspective
 💬 _Places the product within a larger ecosystem or lineage._
 
@@ -103,6 +110,8 @@ Prepared by {{author}}
 - Highlight upstream/downstream systems and ownership boundaries.
 - A high-level context diagram may help to orient the reader.
 
+This product is built by Yousef Marey, an independent contractor. From prototyping to deployment, the website will be owned by Yousef Marey, Mr. Nawaf Abu Anas, and Mr. Abdulrahman Nadi. After deployment, it will be owned by only Mr. Nawaf Abu Anas, and Mr. Abdulrahman Nadi. Responsibility of maintaining individual prospective tennants needs is maintained by Mr. Nawaf Abu Anas, and Mr. Abdulrahman Nadi. Maintaining technical aspects and codebase is done solely by Yousef Marey. In the instance after hand-off, other developers maintain the pre-existing codebase, then technical aspects and failures including attacks is the responsibility of the new developers. If no hand-off is made to other developeres by Mr. Nawaf Abu Anas, and Mr. Abdulrahman Nadi, then Yousef Marey is solely responsibile for technical aspects and failure.
+
 ### 2.2 Product Functions
 💬 _High-level summary of what the product enables users or systems to do._
 
@@ -111,6 +120,12 @@ Prepared by {{author}}
 💡 Tips:
 - 5–10 bullets are often sufficient at this level, grouping related functions logically.
 - Include a top-level data flow or use case diagram if helpful.
+
+- Integrating Airbnb state to website state such that they are the same at all times
+- Admin portal for publishing articles
+- Payment via Credit/Debit Card and Bank Transfer with appropriate protocols for state management
+- Authorization of data
+- Price Management for Reservation based on duration of stay
 
 ### 2.3 Product Constraints
 💬 _Defines contextual limitations or conditions shaping design and implementation._
@@ -122,6 +137,7 @@ Prepared by {{author}}
 - Distinguish external/internal and mandatory/preferred constraints.
 - Avoid design decisions unless truly binding.
 
+Currently, there is no commercial registration for the product which will make it harder to register with a Saudi payment gateway. With some consultation & research, there may be workarounds from Payment Gateways with STCPay or very limited payment gateways.
 📝 Note:
 Requirements (Section 3) defines verifiable system obligations—specific behaviors or qualities the system shall exhibit in order to satisfy limits described in this section.
 
@@ -134,13 +150,16 @@ Requirements (Section 3) defines verifiable system obligations—specific behavi
 - Define user classes by behavior, not just titles.
 - Note localization and accessibility considerations that affect UI/UX requirements.
 
+Admin User: This user (for now) is only Yousef Marey, Mr. Nawaf Abu Anas, and Mr. Abdulrahman Nadi. These have access to the admin side and user side of the website with all authorizations.
+Prospective Tennant: This user has landed on our website and is navigating with our hopes of him/her renting an apartment
+Paid Tenant: This tenant has paid for a booking and has a note history regarding tenant events: check-in, cancellation, damaged properties/items, etc
+
 ### 2.5 Assumptions and Dependencies
 💬 _External assumed factors or conditions, as opposed to known facts, that the project relies on._
 
 ➥ List assumptions about environment, hardware, usage patterns, third-party components/services, and organizational support. List dependencies on external systems, libraries, or teams. For each, indicate potential impact if proven false.
 
-💡 Tips:
-- Link assumptions to risk register with owner and mitigation when available.
+Assumption #1: It is possible to use a payment gateway without a commercial license.
 
 ### 2.6 Apportioning of Requirements
 💬 _Allocation of requirements across components or increments._
@@ -158,7 +177,7 @@ Requirements (Section 3) defines verifiable system obligations—specific behavi
 📃 Template (applies to **all** requirements):
 ```markdown
 - ID: REQ-FUNC-001
-- Title: Short title, representative of the requirement...
+- Title: Authentication & Authorization
 - Statement: The system shall...
 - Rationale: ...
 - Acceptance Criteria: ...
