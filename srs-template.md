@@ -178,12 +178,274 @@ Assumption #1: It is possible to use a payment gateway without a commercial lice
 ```markdown
 - ID: REQ-FUNC-001
 - Title: Authentication & Authorization
-- Statement: The system shall...
-- Rationale: ...
-- Acceptance Criteria: ...
-- Verification Method: Test | Analysis | Inspection | Demonstration | Other
-- More Information: Additional context. Links to related artifacts.
+- Statement: As a user, I want to login/signup to my properties or admin dashboard such that no one else can see my information
+- Acceptance Criteria: In no way can the user access data they are not authorized to via frontend or backend
+- Verification Method: Test
+- More Information: N/A
 ```
+
+```markdown
+- ID: REQ-FUNC-002
+- Title: Admin Dashboard - Create, Update, Read, and Delete (CRUD) blog posts
+- Statement: As an admin, I want to CRUD blog posts from the admin dashboard such that I do not need to tell the software developer to upload blogs
+- Acceptance Criteria: Once a modification is done to a blog post, it's current content is visible to all users to public
+- Verification Method: Test
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-003
+- Title: Admin Dashboard - Format blog posts
+- Statement: As an admin, I want a format for blog posts with a title, description, thumbnail, etc such that there is a standard layout
+- Acceptance Criteria: Every input value will correspond to the correct place (title written by admin results in blog title, description written by admin results in blog description
+- Verification Method: Demonstration
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-004
+- Title: Admin Dashboard - Add Images to Blog (left/right) based percentage from text
+- Statement: As an admin, I want to add fixed MxN side images (and captions) relative to its position in text to illustrate aspects to user
+- Acceptance Criteria: Given a text that is N pixels wide and a percentage less than 100% P, the photo will be placed in the correct relative place based on percentage
+- Verification Method: Test
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-005
+- Title: Admin Dashboard - Bold / Italics option for description text
+- Statement: As an admin, I want to modify particular words to be bold or italic or both for description text to emphasize a word or phrase
+- Acceptance Criteria: Bold / Italics text from the admin side is seen as bold / italics in the user side
+- Verification Method: Test
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-006
+- Title: Admin Dashboard - Create, Update, Read, and Delete (CRUD) Property Listings
+- Statement: As an admin, I want to CRUD property listings with regards to information about the property to convey the user the list of properties available
+- Acceptance Criteria: Once a modification is done to a property list, it's current content is visible to all users to public
+- Verification Method: Test
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-007
+- Title: Admin Dashboard - Format Property Listings
+- Statement: As an admin, I want a format for property listings with a title, description, thumbnail, etc such that there is a standard layout
+- Acceptance Criteria: Once a modification is done to a property list, it's current content is visible to all users to public
+- Verification Method: Test
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-008
+- Title: Admin Dashboard - Emphasize M x N picture size
+- Statement: As an admin, I want the portal to reject a picture that is not JPG or PNG or is not in an M x N format such that there is no distortion of the image to user
+- Acceptance Criteria: A modal opens with reason explaining why picture was rejected
+- Verification Method: Test
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-009
+- Title: Admin Dashboard - List Client Information
+- Statement: As an admin, I want a table that lists client information with the ability to filter and sort
+- Acceptance Criteria: Filtering a client will result in only the matched filter and sorting will result in correct sorting, 0 matched clients should be handled
+- Verification Method: Demonstration
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-010
+- Title: Admin Dashboard - Clicking on client will lead to more details
+- Statement: As an admin, I want to click on a client from the list which will lead to a page with more details regarding the client
+- Acceptance Criteria: All available data for the client will be displayed
+- Verification Method: Demonstration
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-011
+- Title: Admin Dashboard - Add information regarding client
+- Statement: As an admin, I want to be able to add / modify specified information regarding client such as Passport Picture and Marriage Certificates
+- Acceptance Criteria: Admin cannot modify things like name and email but can only modify passport picture
+- Verification Method: Demonstration
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-012
+- Title: Admin Dashboard - Complex Query of Client and Property
+- Statement: As an admin, I want to query between client and property such as give me all clients who booked this property from Time A to Time B or other queries to get business insight
+- Acceptance Criteria: Results are the same as in the database
+- Verification Method: Demonstration
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-013
+- Title: Admin Dashboard - Manual Mark Property as Booked
+- Statement: As an admin, I want the ability mark a property as booked from Time A to Time B if not paid via Visa
+- Acceptance Criteria: No one can book if an admin marked the property as booked
+- Verification Method: Demonstration
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-014
+- Title: Admin Dashboard - Complex Query of Client and Property
+- Statement: As an admin, I want the ability mark a property as booked from Time A to Time B if not paid via Visa
+- Acceptance Criteria: No one can book if an admin marked the property as booked
+- Verification Method: Demonstration
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-015
+- Title: Admin Dashboard & Airbnb Integration - Provide appropiate statistics 
+- Statement: As an admin, I want separate & combined statistics for Airbnb and the website on the dashboard to know how well each is doing
+- Acceptance Criteria: Correct statistics are aggregated
+- Verification Method: Inspection and Test
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-016
+- Title: Admin Dashboard & Airbnb Integration - Get Client information from Airbnb
+- Statement: As an admin, I want all existing clients from Airbnb to be in my database and any new client gets stored into my database
+- Acceptance Criteria: Every time a new client books a property through Airbnb, they get added to the database
+- Verification Method: Inspection and Test
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-SEC-001
+- Title: Rate Limitting
+- Statement: As the owners of the app, I do not want anyone to spam the system
+- Acceptance Criteria: Requests are dropped if user spams
+- Verification Method: Demonstration
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-017
+- Title: Admin Dashboard & Airbnb Integration - Syncing Booking - Creation
+- Statement: As an admin, the Airbnb calandar AND our calander for a property should be marked as booked if the user booked from our website or Airbnb
+- Acceptance Criteria: Booking an appointment in either website syncs the calander
+- Verification Method: Inspection and Test
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-018
+- Title: Admin Dashboard & Airbnb Integration - Syncing Booking - Updating
+- Statement: As an admin, the Airbnb calandar AND our calander for a property should be in sync with dates if the user changed dates for booking from our website or Airbnb
+- Acceptance Criteria: Changing dates from airbnb or website results in calander being in sync
+- Verification Method: Inspection and Test
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-019
+- Title: Admin Dashboard & Airbnb Integration - Syncing Booking - Cancellation
+- Statement: As an admin, the Airbnb calandar AND our calander for a property should be in sync if the user cancelled booking
+- Acceptance Criteria: Cancelling a booking from airbnb or website frees up the space
+- Verification Method: Demonstration
+- More Information: N/A
+```
+
+
+```markdown
+- ID: REQ-FUNC-020
+- Title: Admin Dashboard & Airbnb Integration - Syncing Booking - Cancellation
+- Statement: As an admin, the Airbnb calandar AND our calander for a property should be in sync if the user cancelled booking
+- Acceptance Criteria: Cancelling a booking from airbnb or website frees up the space
+- Verification Method: Demonstration
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-021
+- Title: Admin Dashboard - Pricing Number for Specfiied amount of dates
+- Statement: As an admin, I can adjust the price depending on how long the user booked for
+- Acceptance Criteria: User booking different durations will get the correct price
+- Verification Method: Analysis
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-022
+- Title: User Page - Access to Contact
+- Statement: As a user, I can contact the owners via WhatsApp or other platforms
+- Acceptance Criteria: Clicking on WhatsApp leads to the WhatsApp page
+- Verification Method: Test
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-023
+- Title: User Page - Payment of Deposit via Visa or Bank Transfer
+- Statement: As a user, I can pay the deposit via visa or bank transfer (owner will text me if i choose bank transfer)
+- Acceptance Criteria: Once paid, booking is made on Airbnb and database
+- Verification Method: Test
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-023
+- Title: User Page - Bank Transfer
+- Statement: As a user, I can pay with a bank transfer and the booking will expire after 24 hours if no payment is made
+- Acceptance Criteria: After 24 hours alongside the client has not paid, the booking will expire and the account is deleted
+- Verification Method: Test
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-024
+- Title: User Page - WhatsApp Verification or Email Verification OTP
+- Statement: As a user, I have to verify my account through an OTP either sent via SMS or WhatsApp
+- Acceptance Criteria: Register a user has verified if verified through OTP or WhatsApp
+- Verification Method: Demostration
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-025
+- Title: Email & SMS Management
+- Statement: As an admin, I have to make my email for REQ-FUNC-024 a "do not reply" email to avoid spam
+- Acceptance Criteria: No one should be able to reply to OTP message
+- Verification Method: Test
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-026
+- Title: User Page - Upload Documents Now or Later
+- Statement: As a user, I can upload Passport/ID and marriage certificate (if married) at the time of booking or later
+- Acceptance Criteria: Uploading documents is optional but a note that these documents will need to be uploaded later via user portal or shown physically on arrival
+- Verification Method: Test
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-027
+- Title: User Portal
+- Statement: As a user, I can view recent notes regarding my status as well as upload any required documents
+- Acceptance Criteria: Uploading documents can be done at any time between application and deposit
+- Verification Method: Inspection
+- More Information: N/A
+```
+
+```markdown
+- ID: REQ-FUNC-028
+- Title: User Portal & Admin Portal
+- Statement: As a user, if I send documents to the admin via WhatsApp, the documents will be available on both the admin portal and user portal
+- Acceptance Criteria: Uploading documents can be done at any time between application and check-in
+- Verification Method: Demonstration
+- More Information: N/A
+```
+
 
 Requirement ID schema and traceability:
 - ID format: REQ-[AREA]-[NNN]-[VER] (optional -[VER] if versioned), where AREA ∈ {FUNC, INT, PERF, SEC, REL, AVAIL, OBS, COMP, INST, BUILD, DIST, MAINT, REUSE, PORT, COST, DEAD, POC, CM, ML}.
