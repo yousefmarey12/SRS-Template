@@ -1,10 +1,8 @@
 # Software Requirements Specification
-## For {{project name}}
-
+## For Real Estate Project
 Version 0.1  
-Prepared by {{author}}  
-{{organization}}  
-{{date_modified}}
+Prepared by Yousef Marey
+September 13th, 2026
 
 ## Table of Contents
 <!-- TOC -->
